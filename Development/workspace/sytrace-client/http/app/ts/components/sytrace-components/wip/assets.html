@@ -1,0 +1,80 @@
+
+    <!-- Search and sort region -->
+    <div class="container container_content">  
+    <div class="row">
+         <div class = "col-md-8"> <input type="text" class="form-control" placeholder="Enter your search text"  ng-model="searchQuery" >
+         </div> 
+         <div class = "col-md-1"> 
+            Sort by :
+         </div> 
+         <div class = "col-md-3">
+            <select ng-model="orderProp" class = "form-control">
+              <option value="">Select sort option</option>
+              <option value="name">Category Name</option>
+              <option value="description">Category Description</option>
+            </select>
+          </div> 
+    </div>
+    </div>  
+
+  <!-- render list of items  -->
+  <div class="container container_content">  
+        <div ng-controller = "AssetCategoriesCtrl"  ng-repeat="assetCategory in assetCategories  | limitTo: displayLimit | filter : searchQuery | orderBy : orderProp">
+            <div class = "col-sm-6 col-md-3">
+                    <div class = "thumbnail">
+                     <a class="btn btn-small btn-primary" ui-sref="viewAsset({id:assetCategory.assetCategoryId})" class="thumb">
+                        <img alt = "" ng-src = "{{assetCategory.thumbNailUrl}}"> 
+                      </a>   
+                    </div> 
+                   <div> 
+                        <div class="row"> <a ng-click = "">{{assetCategory.assetCategoryId}}</a>  </div>   
+                        <div class="row"> <a ng-click = "">{{assetCategory.name}}</a> </div> 
+                        <div class="row"> {{assetCategory.description}} </div> 
+                        <div class="row"> {{assetCategory.assetCategoryId}} </div> 
+                        <div class="row"> 
+                           <a class = "btn btn-small btn-primary" ui-sref="viewAsset({id:assetCategory.assetCategoryId})">View</a>
+                            <a class = "btn btn-small btn-primary" ui-sref="editAsset({id:assetCategory.assetCategoryId})">Edit</a> 
+                        </div>  
+                   </div>          
+          </div> 
+    </diV>
+</diV>
+       
+<!--Load more button region -->
+ <div class="container container_content">  
+    <div class="row" >
+       <div class = "col-md-12">
+    </diV>
+    <div class="row" >
+       <div class = "col-md-5">
+       </diV>
+         <div class = "col-md-2">
+            <button style="width:150px;text-align:center;" class="btn-primary btn-block" ng-click = "loadMore()">Load More...</button> 
+         </div>
+       <div class = "col-md-5">
+       </diV>
+    </diV>
+</diV>
+<!--
+<table class="table movietable">
+     <thead>
+        <tr>
+            <th class="span3">Asset Category Id</th>
+             <th class="span3">Name</th>
+            <th class="span5">Description</th>
+        </tr>
+        </thead>
+        
+     <tbody>
+    <tr ng-repeat="assetCategory in assetCategories">
+        <td ng-click="">{{assetCategory.assetCategoryId}}</td>
+        <td ng-click="">{{assetCategory.name}}</td>
+        <td ng-click="">{{assetCategory.description}}</td>
+  
+        <td><a class="btn btn-small btn-primary" ui-sref="viewAsset({id:assetCategory.assetCategoryId})">View</a></td>
+        <td><a class="btn btn-small btn-primary" ui-sref="editAsset({id:assetCategory.assetCategoryId})">Edit</a></td>
+         
+    </tr>
+    </tbody>
+</table>
+-->

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ngSytraceApp" ng-controller = "AssetCategoriesCtrl">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+    <link rel="icon" href="images/favicon.ico">
+
+    <title>Jumbotron Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/Adicons.css" rel="stylesheet">
+    <link href="css/file-upload.css"  rel="sytlesheet">
+   
+  </head>
+
+  <body id="contact-page" ng-controller = "SytraceAssetCtrl">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class = "navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href = "#">Sytrace</a>
+        </div>
+        <div id="navbar" class = "navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              
+               <li><a ui-sref="assets">Art works</a></li>
+               <li><a ui-sref="assets">Photos</a></li>
+               <li><a ui-sref="assets">Video</a></li>
+               <li><a ui-sref="assets">Audio</a></li>
+               <li><a ui-sref="assets">Culture</a></li>
+               <li><a ui-sref="sytraceAssets">Sytrace Assets</a></li>
+               
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle = "dropdown" role = "button" aria-haspopup = "true" aria-expanded="false">Share <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li class="dropdown-header">Nav header</li>
+                  <li><a href="#">Separated link</a></li>
+                  <li><a href="#">One more separated link</a></li>
+                </ul>
+      
+              </li>
+              <li><a ui-sref="newAsset" class="btn btn-small">Asset Category</a></li>
+              <li><a ui-sref="newSytraceAsset" class="btn btn-small">Asset</a></li>
+              <li><a target="_blank" href="blog/index.html">Blog</a></li>
+            </ul>
+          
+          <form class="navbar-form navbar-right">
+             <ul class="nav navbar-nav">
+                  <li class="active"><a href="#">Home</a></li>
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Contact</a></li>
+                  <li><a ui-sref="login">Login</a></li>
+                  <li><a ui-sref="logout">Log Out</a></li>
+                  <li><a ui-sref="newUser">Register</a></li>
+             </ul>
+          </form>
+        </div><!--/.navbar-collapse -->  
+
+      </div>
+    </nav>
+    <div ng-include="'js/directives/notifications.tpl.html'" class="container-fluid" ng-show="notifications.getCurrent().length"></div>
+      
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+   
+   
+
+    
+    <!-- main rendering region -->
+    <div class="container container_content">     
+            <div ui-view> </div> 
+    </diV>
+   
+
+<!-- footer region -->
+ <div class="footer_content"> <!-- /container -->
+    <div class="jumbotron banner_placenment" >
+        <h4>Free region</h4>
+        </div>
+        <footer id="footer">
+        <div class="container footer_links">
+            <div class="row">
+                <div class="col-xs-6 col-md-3">
+                    <ul>
+                      <li><a href="#">Emojis</a></li>
+                      <li><a href="#">Icons</a></li>
+                      <li><a href="#">InfoGraphics</a></li>
+                      <li><a href="#">Fashion Illustrations</a></li>
+                      <li><a href="#">Babies</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-6 col-md-3">
+                    <ul>
+                      <li><a href="#">Family Pictures</a></li>
+                      <li><a href="#">Nature</a></li>
+                      <li><a href="#">Animals</a></li>
+                      <li><a href="#">Vintage Photos</a></li>
+                      <li><a href="#">Background Photos</a></li>
+                    </ul>          
+                </div>
+                <div class="col-xs-6 col-md-3">
+                    <ul>
+                      <li><a href="#">Food</a></li>
+                      <li><a href="#">Sports</a></li>
+                      <li><a href="#">Business</a></li>
+                      <li><a href="#">Beauty</a></li>
+                      <li><a href="#">Animal Photos</a></li>
+                    </ul>            
+                </div>
+                <div class="col-xs-6 col-md-3">
+                    <ul>
+                      <li class="footer_title">Need Help?</li>
+                      <li><a href="#">Phone Support:+16655789988</a></li>
+                      <li><a href="#"></li>
+                      <li><a href="#">Contact Us</a></li>
+                      <li><a href="#">FAQ</a></li>
+                    </ul>           
+                </div>
+            </div>
+        </div>
+        <div class="jumbotron copyright">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="social_links">
+                        <ul>
+                            <li class="facebook"><a href="#" title="Follow Infobula.com on Facebook"><span class="icon-facebook2"></span></a></li>
+                            <li class="twitter"><a href="#" title="Follow Infobula.com on Twitter"><span class="icon-twitter2"></span></a></li>
+                            <li class="googleplus"><a href="#" title="Follow Infobula.com on GooglePlus"><span class="icon-google-plus2"></span></a></li>
+                            <li class="instagram"><a href="#" title="Join Infobula.com on Instagram"><span class="icon-instagram"></span></a></li>                     
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="legal_information">
+                        <ul>
+                            <li><a href="#">License information</a></li>
+                            <li><a href="#">Legal agreements</a></li>
+                            <li><a href="#">Terms of use</a></li>   
+                            <li class="privacy_policy"><a href="#">Privacy policy</a></li>                  
+                        </ul>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div>
+                          <span>&copy; Sytrace 2015</span>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                </div>
+            </div>
+        </div>
+     </div>
+    </footer>
+  </div>
+    
+</div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!-- <script src="assets/js/ie10-viewport-bug-workaround.js"></script> -->
+    
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular/angular-resource.js"></script>
+    <script src="lib/angular/angular-ui-router.min.js"></script>
+    
+    <script src="lib/ng-file-upload-shim.min.js"></script>
+    <script src="lib/ng-file-upload.min.js"></script>
+
+    <script src="js/app.js"></script> 
+    <script src="js/services/assetcategoryservice.js"></script>
+    <script src="js/controllers/assetcategorycontroller.js"></script>
+    <script src="js/services/asset_service.js"></script>
+    <script src="js/controllers/asset_controller.js"></script>
+    <script src="js/services/account_service.js"></script>
+    <script src="js/controllers/accountcontroller.js"></script>
+
+<!--     <script src="js/services/notifications.js"></script> -->
+<!--     <script src="js/services/localizedMessages.js"></script> -->
+<!--     <script src="js/services/httpRequestTracker.js"></script> -->
+<!--     <script src="js/services/account_security.js"></script> -->
+<!--     <script src="js/services/account_retry_queue.js"></script> -->
+<!--     <script src="js/services/account_interceptor.js"></script> -->
+<!--     <script src="js/services/account_index.js"></script> -->
+<!--     <script src="js/services/account_authorization.js"></script> -->
+<!--     <script src="js/controllers/account_login_form_controller.js"></script> -->
+ 
+	<script type="text/javascript">
+	
+	    // trying invocation of controller function from index
+	    function handleSearch() {
+	     //   alert('hello 1');
+	        angular.element($("#contact-page")).scope().loadMore();
+	    }
+	
+	</script>
+
+  </body>
+</html>
+
+   
+<!--  
+        <div class="row">
+          <div class="col-xs-6 col-md-4">
+              <div class = "picture_content">
+                <div>
+                    <img alt="Northern Lights" src="images/NorthernLights_47019198.jpg"> 
+                </div>
+                <h5>Northern lights</h5>         
+              </div>
+              <div class = "picture_content">
+                <div>
+                    <img alt="Signature Winter" src="images/SignatureWinter14642466.jpg">
+                </div>
+                <h5>Signature Winter</h5>
+              </div>   
+          </div>
+          <div class="col-xs-6 col-md-4">
+              <div class = "picture_content">
+                <div>
+                    <img alt="CraftPerson" src="images/Craftsperson_25510157.jpg">
+                </div>
+                <h5>CraftPerson</h5>                 
+              </div>
+              <div class = "picture_content">
+                <div>
+                    <img alt="Essential" src="images/EssentialsAutumn_51207464.jpg">
+                </div>
+                <h5>Essential</h5>
+              </div>   
+          </div>                 
+          <div class="col-xs-6 col-md-4">
+              <div class = "picture_content">
+                <div>
+                    <img alt="Determination" src="images/Determination_24916266.jpg">
+                </div>
+                <h5>Determination</h5>
+              </div>          
+          </div>
+        </div>
+   
+    </div>
+  -->
