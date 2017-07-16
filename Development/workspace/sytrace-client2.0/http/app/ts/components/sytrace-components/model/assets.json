@@ -1,0 +1,25 @@
+{
+  "assets" : [
+
+        {
+          "categoryId": 1,
+          "subCategoryId": 1,
+          "title": "First Folk Tale",
+          "text": "Here comes Mbe - the crafty",
+          "tag": "Mbe",
+          "attachmentOneId": 1,
+          "attachmentTwoId": 0,
+          "attachmentThreeId": 0,
+          "attachmentFourId": 0,
+          "thumpsUp": 0,
+          "thumpsDown": 0,
+          "postedById": 0,
+          "publishedId": 0,
+          "lastModifiedById": 0,
+          "publishedTimeStamp": "04/07/2017",
+          "status": "Active"
+        }
+
+  ]
+
+}

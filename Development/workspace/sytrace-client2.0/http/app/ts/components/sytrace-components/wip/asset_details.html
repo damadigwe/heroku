@@ -1,0 +1,102 @@
+
+
+<div class="col-md-10 col-md-offset-1">
+    
+    <div ng-model="assetView.thumbNailUrl" class="col-md-6" style="background-color:#707B7C ; min-height:400px; margin-top:20px">
+        <img alt = "" ng-src = "{{assetView.thumbNailUrl}}" style="background-color:#707B7C ; min-height:400px; margin-top:20px"> 
+    </div>
+    <div class="col-md-6">
+        <center><h3>Asset Details</h3></center>
+        <br/>
+        <form class="form-horizontal">
+          <div class="form-group">
+            <label for="region" class="col-sm-2 control-label">Region</label>
+            <div class="col-sm-4">
+              <select class="form-control" id="region">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+              </select>
+            </div>      
+            <label for="country" class="col-sm-2 control-label">Country</label>
+            <div class="col-sm-4">
+              <select class="form-control" id="country">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="assetType" class="col-sm-2 control-label">Asset Type</label>
+            <div class="col-sm-4">
+              <select class="form-control" id="assetType">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="title" class="col-sm-2 control-label"  >Name</label>
+            <div class="col-sm-10">
+              <input type="text"  ng-model = "assetView.name" class="form-control" id="title" placeholder="Title">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="description" class="col-sm-2 control-label">Description</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="description" ng-model="assetView.description" placeholder="Description">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="mediaPath" class="col-sm-2 control-label">Path</label>
+            <div class="col-sm-10">
+              <input type="file" id="mediaPath">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="tag" class="col-sm-2 control-label">Tag</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="tag" placeholder="Tag">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-default">Download</button>
+              <button type="button" class="btn btn-default">Cancel</button>
+              <a ui-sref="assets">Back To Assets</a>
+            </div>
+          </div>
+        </form>
+    </div>
+    
+</div>
+
+
+
+<div align="center">
+<div ng-repeat="arr in assets">
+            <h2></h2>
+            <table border="1px">
+                <tr ng-repeat="(key,value) in arr">
+                    <td>{{key}}</td>
+                    <td>{{value}}</td>
+                    <td><a class="btn btn-primary" ui-sref="editAsset({id:arr.assetId})">Edit</a></td>
+                </tr>
+            </table>
+        </div>
+ </div>
+asset | json: <pre>asset = {{assets | json}}</pre>
+
+
+</div>
+
+
+  

@@ -1,0 +1,24 @@
+<div class="col-md-6">
+
+<br/>
+
+
+<form name="loginForm" ng-controller="LoginController" ng-submit="login(credentials)" novalidate method=”post”>
+ <div class="modal-body">
+  <div class="alert alert-warning" ng-show="authReason">
+      {{authReason}}
+  </div>
+  <div class="alert alert-error" ng-show="authError">
+      {{authError}}
+  </div>
+  <label for="credentials.userName">Username:</label>
+  <input type="text" id="credentials.userName" ng-model="credentials.userName">
+  
+  <label for="credentials.password">Password:</label>
+  <input type="password" id="password" ng-model="credentials.password">
+  <button type="submit">Login</button>
+  </div> 
+ 
+</form>
+
+</div> 

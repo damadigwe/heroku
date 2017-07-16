@@ -1,0 +1,109 @@
+
+        <h1>Asset Creation </h1>
+        <form [formGroup] = "assetCreationFormGroup"  (ngSubmit)="createAsset(assetCreationFormGroup)" >
+            <p>
+                JSON.stringify(this.assetCategories);
+            </p>
+
+            <div  class="assetForm"  id= "addAssetFormWrapperDiv">
+                <p>
+                <label for="assetCategory" class="label">Category</label>
+                    <select  [formControl]="assetCategory"  name="assetCategory" id="assetCategory"  >
+                        <option *ngFor="let category of assetCategories" [value]="category.categoryId">{{category.categoryName}}<option>
+                    </select>
+                </p>
+
+                <p>
+                    <label for="assetSubCategory" class="label">Sub Category</label>
+                    <select   name="assetSubCategory" id="assetSubCategory" >
+                        <option *ngFor="let subCategory of assetSubCategories" [value]="subCategory.subCategoryId">{{subCategory.name}}<option>
+                    </select>
+                </p>
+
+                <p>
+                    <label for="sourceCountry" class="label">Country of origin</label>
+                    <select   name="sourceCountry" id="sourceCountry" >
+                        <option value="null">Select One</option>
+                        <option value="1">Friend</option>
+                        <option value="2">Herban Jungle</option>
+                        <option value="3">Compost Today</option>
+                        <option value="4">Vanity Fair</option>
+                    </select>
+                </p>
+
+                <p>
+                    <label for="sourceRegion" class="label">Country region</label>
+                    <select   name="sourceRegion" id="sourceRegion" >
+                        <option value="null">Select One</option>
+                        <option value="1">Friend</option>
+                        <option value="2">Herban Jungle</option>
+                        <option value="3">Compost Today</option>
+                        <option value="4">Vanity Fair</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="description"  class="label">Text</label>
+                    <textarea name="description" id ="description" cols="35" rows="4" ></textarea>
+
+                </p>
+                <p>
+                    <label for="tag"  class="label">Tag</label>
+                    <input type="text" name="tag" id="tag" >
+                </p>
+                <p>
+                    <label for="attachment1"  class="label">Attachments</label>
+                    <input type="file" (change)="fileChange($event)" placeholder="Upload file" accept=".pdf,.doc,.docx,.gif,.png,.jpg" name="attachment1" id="attachment1">
+                </p>
+                <p>
+                    <label for="attachment2"  class="label"></label>
+                    <input type="file" placeholder="Upload file" accept=".pdf,.doc,.docx,.gif,.png,.jpg"  name="attachment2" id="attachment2">
+                </p>
+                <p>
+                    <label for="attachment3"  class="label"></label>
+                    <input type="file" placeholder="Upload file" accept=".pdf,.doc,.docx,.gif,.png,.jpg"  name="attachment3" id="attachment3">
+                </p>
+                <p>
+                    <label for="attachment4"  class="label"></label>
+                    <input type="file"  placeholder="Upload file" accept=".pdf,.doc,.docx,.gif,.png,.jpg" name="attachment4" id="attachment4">
+                </p>
+                <p></p>
+                <div>
+                    <input type="submit" value="Save Asset">
+                </div>
+
+            </div>
+    </form>
+
+
+
+
+  <div class="ui raised segment">
+    <h2 class="ui header"> Sytrace - Demo Form: with custom validations</h2>
+    <form [formGroup]="myForm"
+          (ngSubmit)="onSubmit(myForm.value)"
+          class="ui form">
+
+      <div class="field"
+          [class.error]="!sku.valid && sku.touched">
+        <label for="skuInput">SKU</label>
+        <input type="text"
+               id="skuInput"
+               placeholder="SKU"
+               [formControl]="sku">
+         <div *ngIf="!sku.valid"
+           class="ui error message">SKU is invalid</div>
+         <div *ngIf="sku.hasError('required')"
+           class="ui error message">SKU is required</div>
+         <div *ngIf="sku.hasError('invalidSku')"
+           class="ui error message">SKU must begin with <span>123</span></div>
+      </div>
+
+      <div *ngIf="!assetCreationFormGroup.valid"
+        class="ui error message">Form is invalid</div>
+      <button type="submit" class="ui button">Submit</button>
+    </form>
+  </div>
+ <!--
+        addAsset(categoryId: string, subCategoryId: string, title: string,
+        text: string, tag: string, attachmentOneId: string, attachmentTwoId: string,
+        attachmentThreeId: string, attachmentFourId: string, thumpsUp: string , thumpsDown: string, postedById: string, publishedId: string, lastModifiedById: string, publishedTimeStamp: string , status: string, mockImageUrl: string) -->
